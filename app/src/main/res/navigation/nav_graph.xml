@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startActivity">
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.geeks.lovecalculate.ui.fragments.history.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.geeks.lovecalculate.ui.activity.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <activity
+        android:id="@+id/onBoardActivity"
+        android:name="com.geeks.lovecalculate.ui.fragments.onBoard.OnBoardActivity"
+        android:label="activity_on_board"
+        tools:layout="@layout/activity_on_board" />
+    <activity
+        android:id="@+id/secondActivity"
+        android:name="com.geeks.lovecalculate.ui.activity.SecondActivity"
+        android:label="activity_second"
+        tools:layout="@layout/activity_second" />
+    <activity
+        android:id="@+id/startActivity"
+        android:name="com.geeks.lovecalculate.ui.activity.StartActivity"
+        android:label="activity_start"
+        tools:layout="@layout/activity_start" />
+</navigation>
