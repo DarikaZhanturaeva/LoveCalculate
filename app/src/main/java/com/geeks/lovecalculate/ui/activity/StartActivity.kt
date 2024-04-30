@@ -1,14 +1,10 @@
 package com.geeks.lovecalculate.ui.activity
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.Navigation.findNavController
-import com.geeks.lovecalculate.R
-import com.geeks.lovecalculate.databinding.ActivitySecondBinding
 import com.geeks.lovecalculate.databinding.ActivityStartBinding
-import com.geeks.lovecalculate.ui.fragments.onBoard.OnBoardActivity
+import com.geeks.lovecalculate.ui.onBoard.OnBoardActivity
 
 class StartActivity : AppCompatActivity() {
 

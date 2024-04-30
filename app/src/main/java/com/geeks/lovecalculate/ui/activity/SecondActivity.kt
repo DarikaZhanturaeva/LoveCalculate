@@ -3,9 +3,7 @@ package com.geeks.lovecalculate.ui.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.geeks.lovecalculate.R
 import com.geeks.lovecalculate.databinding.ActivitySecondBinding
-import com.geeks.lovecalculate.ui.fragments.onBoard.OnBoardActivity
 
 class SecondActivity : AppCompatActivity() {
 

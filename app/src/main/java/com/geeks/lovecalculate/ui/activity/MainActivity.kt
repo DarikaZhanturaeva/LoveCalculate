@@ -3,48 +3,58 @@ package com.geeks.lovecalculate.ui.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.geeks.lovecalculate.RetrofitService
 import com.geeks.lovecalculate.databinding.ActivityMainBinding
-import com.geeks.lovecalculate.model.LoveModel
+import com.geeks.lovecalculate.data.model.LoveModel
+import com.geeks.lovecalculate.utils.Constants
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private val binding by lazy {
+        ActivityMainBinding.inflate(layoutInflater)
+    }
+    private val viewModel: MainViewModel by lazy {
+        ViewModelProvider(this)[MainViewModel::class.java]
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        initClickers()
+    }
 
-         binding.btnCalculate.setOnClickListener {
-            val firstName = binding.etFname.text.toString()
-            val secondName = binding.etSname.text.toString()
 
-            if (firstName.isNotEmpty() && secondName.isNotEmpty()) {
-                initClickers(firstName, secondName)
+    private fun initClickers() = with(binding) {
+        btnCalculate.setOnClickListener {
+            viewModel.getLovePercentage(
+                firstName = etFname.text.toString(),
+                secondName = etSname.text.toString()
+            ).observe(this@MainActivity) { data ->
+                setupObservers(data)
             }
         }
     }
-    private fun initClickers(firstName: String, secondName: String) {
-        val loveApi = RetrofitService().api
 
-        loveApi.getPercentage("31349f87c1msh941e3b50ff85859p191fc0jsn6a217a151fa6","love-calculator.p.rapidapi.com",firstName,secondName).enqueue(object : Callback<LoveModel>{
-            override fun onResponse(call: Call<LoveModel>, response: Response<LoveModel>) {
-                if (response.isSuccessful){
-                    val loveModel = response.body()
-                    val intent = Intent(this@MainActivity, SecondActivity::class.java)
-                    intent.putExtra("firstName", firstName)
-                    intent.putExtra("secondName", secondName)
-                    intent.putExtra("percentage", loveModel?.percentage)
-                    intent.putExtra("result", loveModel?.result)
-                    startActivity(intent)
-                }
+    private fun setupObservers(data: LoveModel) = with(viewModel) {
+        startActivity(
+            Intent(this@MainActivity, SecondActivity::class.java).apply {
+                putExtra(ARG_FIRST_NAME, binding.etFname.text.toString())
+                putExtra(ARG_SECOND_NAME, binding.etSname.text.toString())
+                putExtra(ARG_PERCENTAGE, data.percentage)
+                putExtra(ARG_RESULT, data.result)
             }
+        )
+    }
 
-            override fun onFailure(call: Call<LoveModel>, t: Throwable) {
-            }
-        })
+    companion object {
+        const val ARG_FIRST_NAME = "firstName"
+        const val ARG_SECOND_NAME = "secondName"
+        const val ARG_PERCENTAGE = "percentage"
+        const val ARG_RESULT = "result"
     }
 }

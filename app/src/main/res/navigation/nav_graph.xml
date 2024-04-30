@@ -17,7 +17,7 @@
         tools:layout="@layout/activity_main" />
     <activity
         android:id="@+id/onBoardActivity"
-        android:name="com.geeks.lovecalculate.ui.fragments.onBoard.OnBoardActivity"
+        android:name="com.geeks.lovecalculate.ui.onBoard.OnBoardActivity"
         android:label="activity_on_board"
         tools:layout="@layout/activity_on_board" />
     <activity

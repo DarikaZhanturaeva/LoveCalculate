@@ -1,6 +1,6 @@
 package com.geeks.lovecalculate
 
-import com.geeks.lovecalculate.model.LoveModel
+import com.geeks.lovecalculate.data.model.LoveModel
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header

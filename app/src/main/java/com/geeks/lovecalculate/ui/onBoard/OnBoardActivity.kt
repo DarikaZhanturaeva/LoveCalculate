@@ -1,13 +1,10 @@
-package com.geeks.lovecalculate.ui.fragments.onBoard
+package com.geeks.lovecalculate.ui.onBoard
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.geeks.lovecalculate.R
 import com.geeks.lovecalculate.databinding.ActivityOnBoardBinding
-import com.geeks.lovecalculate.databinding.ItemOnBoardBinding
 import com.geeks.lovecalculate.ui.activity.MainActivity
-import com.geeks.lovecalculate.ui.activity.SecondActivity
 
 class OnBoardActivity : AppCompatActivity() {
 

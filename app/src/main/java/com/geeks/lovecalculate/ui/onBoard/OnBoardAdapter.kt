@@ -1,4 +1,4 @@
-package com.geeks.lovecalculate.ui.fragments.onBoard
+package com.geeks.lovecalculate.ui.onBoard
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

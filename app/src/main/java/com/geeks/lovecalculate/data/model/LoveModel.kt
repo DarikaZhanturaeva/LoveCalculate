@@ -1,4 +1,4 @@
-package com.geeks.lovecalculate.model
+package com.geeks.lovecalculate.data.model
 
 import com.google.gson.annotations.SerializedName
 
