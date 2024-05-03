@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.geeks.lovecalculate.databinding.ItemOnBoardBinding
 import com.geeks.lovecalculate.loadImage
 
-class OnBoardAdapter() :
+class OnBoardAdapter(private val onClick: () -> Unit) :
     RecyclerView.Adapter<OnBoardAdapter.ViewHolder>() {
 
     private val list = arrayListOf(
@@ -24,6 +24,11 @@ class OnBoardAdapter() :
             "https://i.pinimg.com/originals/c1/ce/28/c1ce284116bba998a6e7388cdc65e680.png",
             "Have a breakup?",
             "We have made the correction for you \n don't worry \n Maybe someone is waiting for you!"
+        ),
+        OnBoardModel(
+            "https://www.freeiconspng.com/thumbs/love-png/love-png-5.png",
+            "Life?",
+            "“A life lived in love will \n never be dull"
         )
     )
 
@@ -45,12 +50,15 @@ class OnBoardAdapter() :
         holder.bind(list[position])
     }
 
-    class ViewHolder(private val binding: ItemOnBoardBinding) :
+    inner class ViewHolder(private val binding: ItemOnBoardBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(onBoard : OnBoardModel){
+        fun bind(onBoard: OnBoardModel) {
             binding.imgVp2.loadImage(onBoard.image)
-            binding.tvDescription.text=onBoard.description
+            binding.tvDescription.text = onBoard.description
             binding.tvTheme.text = onBoard.theme
+            binding.btnNext.setOnClickListener {
+                onClick()
+            }
         }
     }
 }
