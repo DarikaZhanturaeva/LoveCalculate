@@ -1,30 +1,42 @@
 package com.geeks.lovecalculate.ui.onBoard
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.geeks.lovecalculate.ApplicationModule
+import com.geeks.lovecalculate.Pref
+import com.geeks.lovecalculate.databinding.ActivityMainBinding
 import com.geeks.lovecalculate.databinding.ActivityOnBoardBinding
 import com.geeks.lovecalculate.ui.activity.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class OnBoardActivity : AppCompatActivity() {
 
-    private var adapter = OnBoardAdapter()
+    @Inject
+    lateinit var pref :Pref
+    private var adapter = OnBoardAdapter(this::onClick)
 
-    private lateinit var binding: ActivityOnBoardBinding
+
+    private val binding by lazy {
+        ActivityOnBoardBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityOnBoardBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupViewPager()
+        onClick()
+    }
 
-        binding.btnNext.setOnClickListener {
-            val intent = Intent(this@OnBoardActivity, MainActivity::class.java)
-            startActivity(intent)
-        }
+    private fun onClick() {
+        pref.onBoardingShow()
+        startActivity(Intent(this@OnBoardActivity, MainActivity::class.java))
     }
 
     private fun setupViewPager() {
-        binding.viewPager2.adapter=adapter
+        binding.viewPager2.adapter = adapter
     }
 }
