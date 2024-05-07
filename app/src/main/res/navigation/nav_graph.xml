@@ -20,7 +20,7 @@
             android:id="@+id/action_onBoardActivity_to_mainActivity"
             app:destination="@+id/mainActivity"
             app:popUpTo="@+id/nav_graph"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="true"/>
     </activity>
     <activity
         android:id="@+id/secondActivity"
@@ -32,4 +32,9 @@
         android:name="com.geeks.lovecalculate.ui.activity.StartActivity"
         android:label="activity_start"
         tools:layout="@layout/activity_start" />
+    <activity
+        android:id="@+id/historyActivity"
+        android:name="com.geeks.lovecalculate.ui.activity.HistoryActivity"
+        android:label="activity_history"
+        tools:layout="@layout/activity_history" />
 </navigation>

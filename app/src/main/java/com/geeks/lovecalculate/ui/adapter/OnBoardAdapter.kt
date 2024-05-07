@@ -1,10 +1,11 @@
-package com.geeks.lovecalculate.ui.onBoard
+package com.geeks.lovecalculate.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.geeks.lovecalculate.databinding.ItemOnBoardBinding
-import com.geeks.lovecalculate.loadImage
+import com.geeks.lovecalculate.extensions.loadImage
+import com.geeks.lovecalculate.ui.onBoard.OnBoardModel
 
 class OnBoardAdapter(private val onClick: () -> Unit) :
     RecyclerView.Adapter<OnBoardAdapter.ViewHolder>() {
@@ -26,7 +27,7 @@ class OnBoardAdapter(private val onClick: () -> Unit) :
             "We have made the correction for you \n don't worry \n Maybe someone is waiting for you!"
         ),
         OnBoardModel(
-            "https://www.freeiconspng.com/thumbs/love-png/love-png-5.png",
+            "https://pngimg.com/d/love_PNG11.png",
             "Life?",
             "“A life lived in love will \n never be dull"
         )

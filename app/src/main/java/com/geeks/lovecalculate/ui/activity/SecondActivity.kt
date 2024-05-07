@@ -32,5 +32,9 @@ class SecondActivity : AppCompatActivity() {
             val intent = Intent(this@SecondActivity, MainActivity::class.java)
             startActivity(intent)
         }
+
+        binding.imgIcHistory.setOnClickListener {
+            startActivity(Intent(this@SecondActivity, HistoryActivity::class.java))
+        }
     }
 }

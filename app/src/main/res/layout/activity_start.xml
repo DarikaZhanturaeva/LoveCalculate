@@ -20,7 +20,7 @@
             android:id="@+id/img_start"
             android:layout_width="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_love_start"
+            android:src="@drawable/ic_love"
             android:layout_height="match_parent"/>
 
     </FrameLayout>
@@ -31,8 +31,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="130dp"
         android:text="@string/get_started"
+        android:backgroundTint="@color/pink"
         android:textColor="@color/black"
         android:textSize="26sp"
+        android:paddingVertical="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

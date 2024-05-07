@@ -10,13 +10,13 @@
     tools:context=".ui.activity.SecondActivity">
 
     <ImageView
-        android:padding="10dp"
-        android:layout_marginTop="10dp"
         android:id="@+id/img_loveCalculator"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_love_vp1" />
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_love" />
 
     <TextView
         android:id="@+id/tv_fname"
@@ -42,9 +42,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
+        android:gravity="center"
         android:text="@string/your_score"
         android:textColor="#E91EAF"
-        android:gravity="center"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -63,10 +63,27 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:backgroundTint="#1303F4"
+        android:backgroundTint="@color/pink"
         android:text="@string/try_again"
         android:textColor="@color/black"
         android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/img_ic_history"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:gravity="start|bottom"
+        android:src="@drawable/ic_love" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/history"
+        android:textColor="@color/pink"
+        android:textStyle="bold" />
 
 
 </LinearLayout>

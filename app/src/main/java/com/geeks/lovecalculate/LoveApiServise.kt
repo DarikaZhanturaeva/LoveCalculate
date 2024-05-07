@@ -1,6 +1,6 @@
 package com.geeks.lovecalculate
 
-import com.geeks.lovecalculate.data.model.LoveModel
+import com.geeks.lovecalculate.data.network.model.LoveModel
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -16,5 +16,5 @@ interface LoveApiService {
         @Query("fname") firstName: String,
         @Query("sname") secondName: String,
 
-    ): Call<LoveModel>
+        ): Call<LoveModel>
 }

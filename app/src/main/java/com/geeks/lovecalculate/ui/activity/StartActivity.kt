@@ -14,6 +14,7 @@ class StartActivity : AppCompatActivity() {
     private val binding by lazy {
         ActivityStartBinding.inflate(layoutInflater)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)

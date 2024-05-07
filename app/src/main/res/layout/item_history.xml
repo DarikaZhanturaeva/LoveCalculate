@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/border"
+    android:padding="10dp">
+
+
+    <LinearLayout
+        android:id="@+id/ll_names"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_fname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:textSize="18sp"
+            android:textColor="@color/pink"
+            android:textStyle="bold"
+            tools:text="You" />
+
+        <TextView
+            android:id="@+id/tv_sname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:textSize="18sp"
+            android:textColor="@color/pink"
+            android:textStyle="bold"
+            tools:text="Me" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:text="@string/equally"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ll_names"
+        app:layout_constraintStart_toEndOf="@id/ll_names"
+        app:layout_constraintTop_toTopOf="@id/ll_names" />
+
+    <ImageView
+        android:id="@+id/img_heart"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_love"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100%"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/img_heart"
+        app:layout_constraintEnd_toEndOf="@id/img_heart"
+        app:layout_constraintStart_toStartOf="@id/img_heart"
+        app:layout_constraintTop_toTopOf="@id/img_heart" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.geeks.lovecalculate
+package com.geeks.lovecalculate.utils
 
 import android.content.SharedPreferences
 import javax.inject.Inject
@@ -8,11 +8,11 @@ class Pref @Inject constructor(
 ) {
 
     fun onShowed(): Boolean {
-        return pref.getBoolean(SHOWED_KEY, false)
+        return pref.getBoolean(SHOWED_KEY, true)
     }
 
     fun onBoardingShow() {
-        pref.edit().putBoolean(SHOWED_KEY, true).apply()
+        pref.edit().putBoolean(SHOWED_KEY, false).apply()
     }
 
     companion object {

@@ -1,4 +1,4 @@
-package com.geeks.lovecalculate.data.model
+package com.geeks.lovecalculate.data.network.model
 
 import com.google.gson.annotations.SerializedName
 
@@ -7,9 +7,9 @@ class LoveModel(
     val firstName: String,
     @SerializedName("sname")
     val secondName: String,
-    @SerializedName("Percentage")
-    val percentage :String,
+    @SerializedName("percentage")
+    val percentage: String,
     @SerializedName("result")
-    val result :String
+    val result: String
 )
 

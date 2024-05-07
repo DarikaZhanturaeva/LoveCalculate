@@ -1,11 +1,16 @@
 package com.geeks.lovecalculate
 
 import android.app.Application
+import com.geeks.lovecalculate.data.local.database.LoveDatabase
 import dagger.hilt.android.HiltAndroidApp
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 @HiltAndroidApp
 class App : Application(){
+
+    companion object{
+        var loveDataBase: LoveDatabase? = null
+    }
     var api :LoveApiService?=null
     override fun onCreate() {
         super.onCreate()

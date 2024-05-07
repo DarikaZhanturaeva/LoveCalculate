@@ -1,14 +1,14 @@
 package com.geeks.lovecalculate.ui.activity
 
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.lifecycle.ViewModelProvider
-import com.geeks.lovecalculate.Pref
+import com.geeks.lovecalculate.data.local.dao.LoveDao
+import com.geeks.lovecalculate.data.local.entities.History
+import com.geeks.lovecalculate.utils.Pref
 import com.geeks.lovecalculate.databinding.ActivityMainBinding
-import com.geeks.lovecalculate.data.model.LoveModel
+import com.geeks.lovecalculate.data.network.model.LoveModel
 import com.geeks.lovecalculate.ui.onBoard.OnBoardActivity
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
